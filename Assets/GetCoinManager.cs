@@ -32,10 +32,11 @@ public class GetCoinManager : MonoBehaviour
             other.gameObject.SetActive(false);
 
             Destroy(Instantiate(vfx, other.transform.position, Quaternion.identity), 2f);
+
+            Save();
         }
     }
-
-    private void OnApplicationQuit()
+    private void Save()
     {
         PlayerPrefs.SetFloat(savekey, coins);
     }
